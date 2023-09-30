@@ -126,6 +126,8 @@ def get_sales_information(file_path: str) -> Dict:
     # print stats
     dp.describe(column_names=['UnitPrice', 'TotalPrice'])
 
+    main_logger.debug("Done sales information calculation")
+
     # return total revenue and revenue per region
     return {
         'total_revenue': dp.aggregate(column_name='TotalPrice'),
